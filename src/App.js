@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import ProviderRoutes from "./Components/ProviderRoutes";
+import ContextUser from "./Components/ContextUser";
 
-function App() {
+import { theme } from "./Components/theme";
+import { ThemeProvider } from "@mui/material/styles";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContextUser>
+      <ThemeProvider theme={theme}>
+        <ProviderRoutes />
+      </ThemeProvider>
+    </ContextUser>
   );
-}
+};
 
 export default App;
